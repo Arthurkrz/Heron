@@ -6,34 +6,23 @@ namespace Heron
     {
         static void Main(string[] args)
         {
-            Triangulo triangulo = new Triangulo();
-            Console.WriteLine("Insira o valor do primeiro lado do primeiro triangulo:");
-            triangulo.x1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o valor do segundo lado do primeiro triangulo:");
-            triangulo.x2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o valor do terceiro lado do primeiro triangulo:");
-            triangulo.x3 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o valor do primeiro lado do segundo triangulo:");
-            triangulo.y1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o valor do segundo lado do segundo triangulo:");
-            triangulo.y2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o valor do terceiro lado do segundo triangulo:");
-            triangulo.y3 = int.Parse(Console.ReadLine());
-            Area(triangulo.x1, triangulo.x2, triangulo.x3, triangulo.y1, triangulo.y2, triangulo.y3);
-        }
-        static void Area(int x1, int x2, int x3, int y1, int y2, int y3)
-        {
-            double semi1 = (x1 + x2 + x3) / 2.0;
-            double semi2 = (y1 + y2 + y3) / 2.0;
-            double temp1 = semi1 * (semi1 - x1) * (semi1 - x2) * (semi1 - x3);
-            double area1 = Math.Sqrt(temp1);
-            double temp2 = semi2 * (semi2 - y1) * (semi2 - y2) * (semi2 - y3);
-            double area2 = Math.Sqrt(temp2);
-            if (area1 > area2)
+            Triangulo t1 = new Triangulo();
+            Triangulo t2 = new Triangulo();
+            Console.WriteLine("Insira o valor dos lados do primeiro triangulo sequencialmente:");
+            t1.A = int.Parse(Console.ReadLine());
+            t1.B = int.Parse(Console.ReadLine());
+            t1.C = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o valor dos lados do segundo triangulo sequencialmente:");
+            t2.A = int.Parse(Console.ReadLine());
+            t2.B = int.Parse(Console.ReadLine());
+            t2.C = int.Parse(Console.ReadLine());
+            t1.calculoArea();
+            t2.calculoArea();
+            if (t1.area > t2.area)
             {
                 Console.WriteLine("O primeiro triângulo apresenta maior área.");
             }
-            else if (area2 > area1)
+            else if (t2.area > t1.area)
             {
                 Console.WriteLine("O segundo triângulo apresenta maior área.");
             }

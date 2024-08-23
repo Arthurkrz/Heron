@@ -6,11 +6,14 @@ namespace Heron
 {
     public class Triangulo
     {
-        public int x1;
-        public int x2;
-        public int x3;
-        public int y1;
-        public int y2;
-        public int y3;
+        public int A;
+        public int B;
+        public int C;
+        public double area;
+        public void calculoArea()
+        {
+            double p = (A + B + C) / 2.0;
+            area = Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+        }
     }
 }
